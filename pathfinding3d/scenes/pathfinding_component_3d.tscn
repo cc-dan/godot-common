@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://euj3oktl025t"]
+
+[ext_resource type="Script" uid="uid://d15fip4fj4n3m" path="res://pathfinding3d/scripts/pathfinding_component_3d.gd" id="1_76lku"]
+
+[node name="PathfindingComponent3D" type="Node"]
+script = ExtResource("1_76lku")

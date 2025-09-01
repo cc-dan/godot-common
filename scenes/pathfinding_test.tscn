@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6qg8ov1pt3i8"]
+
+[ext_resource type="Script" uid="uid://cs8dma10wl0a5" path="res://scripts/pathfinding_test/agent.gd" id="1_ik1ee"]
+[ext_resource type="PackedScene" uid="uid://euj3oktl025t" path="res://pathfinding3d/scenes/pathfinding_component_3d.tscn" id="2_qsxnq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ik1ee"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_qsxnq"]
+sky_material = SubResource("ProceduralSkyMaterial_ik1ee")
+
+[sub_resource type="Environment" id="Environment_nnsah"]
+background_mode = 2
+sky = SubResource("Sky_qsxnq")
+tonemap_mode = 2
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nnsah"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ccyl2"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_2c6q1"]
+vertices = PackedVector3Array(-2.25, 0.5, -1.5, -2.5, 0.5, -2, -4, 0.5, -2.25, -10.25, 0.5, 2.25, -12, 0.5, 3.25, -10.75, 0.5, 3.25, -2.25, 0.5, -4, -1, 0.5, -4.5, -0.75, 0.5, -5.75, 0.25, 0.5, -12, -4, 0.5, -3.75, -12, 0.5, -12, 0.25, 0.5, -6, 10, 0.5, -3, 10, 0.5, -2.25, 12, 0.5, -2.25, 9.25, 0.5, -3.5, 12, 0.5, -12, -2, 0.5, -2.25, -0.5, 0.5, -1.75, -0.5, 0.5, -3.75, 1.75, 0.5, -2, 3.75, 0.5, -2.5, -0.25, 0.5, -0.75, 1, 0.5, -0.5, 3.25, 0.5, -2, 3.75, 0.5, -1.5, 8.25, 0.5, -1, -0.75, 0.5, 0.25, -2, 0.5, 0.75, -1.75, 0.5, 1.25, -0.25, 0.5, 1.25, 3.75, 0.5, 0, 3.25, 0.5, 0.5, -0.25, 0.5, 3.75, -2.25, 0.5, 3.5, -2.5, 0.5, 3.75, 5, 0.5, 10.5, 2, 0.5, 0.75, 0.25, 0.5, 3, 9.5, 0.5, -1, 4.5, 0.5, 12, 12, 0.5, 12, 2.25, 1.75, -1, 2.25, 1.75, -0.5, 2.75, 1.75, -0.5, 2.75, 1.75, -1, -2.5, 0.5, 2, -4, 0.5, 4, -10.25, 0.5, 4.25, -12, 0.5, 12, -4, 0.5, 5.25, -9.5, 0.5, 4.25, 3.5, 0.5, 12)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 5, 4), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 10), PackedInt32Array(8, 10, 9), PackedInt32Array(3, 4, 10), PackedInt32Array(10, 4, 11), PackedInt32Array(10, 11, 9), PackedInt32Array(9, 12, 8), PackedInt32Array(10, 2, 3), PackedInt32Array(15, 14, 13), PackedInt32Array(13, 16, 15), PackedInt32Array(15, 16, 17), PackedInt32Array(12, 9, 16), PackedInt32Array(16, 9, 17), PackedInt32Array(1, 18, 0), PackedInt32Array(0, 18, 19), PackedInt32Array(6, 20, 18), PackedInt32Array(18, 20, 19), PackedInt32Array(19, 20, 21), PackedInt32Array(21, 20, 22), PackedInt32Array(6, 7, 20), PackedInt32Array(23, 19, 24), PackedInt32Array(24, 19, 21), PackedInt32Array(22, 25, 21), PackedInt32Array(25, 22, 26), PackedInt32Array(26, 22, 27), PackedInt32Array(29, 28, 30), PackedInt32Array(30, 28, 31), PackedInt32Array(32, 26, 27), PackedInt32Array(28, 23, 31), PackedInt32Array(31, 23, 24), PackedInt32Array(33, 32, 27), PackedInt32Array(35, 34, 36), PackedInt32Array(36, 34, 37), PackedInt32Array(24, 38, 31), PackedInt32Array(31, 38, 39), PackedInt32Array(14, 15, 40), PackedInt32Array(40, 15, 37), PackedInt32Array(37, 15, 41), PackedInt32Array(41, 15, 42), PackedInt32Array(27, 40, 33), PackedInt32Array(33, 40, 34), PackedInt32Array(34, 40, 37), PackedInt32Array(39, 38, 34), PackedInt32Array(34, 38, 33), PackedInt32Array(46, 45, 43), PackedInt32Array(43, 45, 44), PackedInt32Array(30, 47, 29), PackedInt32Array(35, 36, 47), PackedInt32Array(47, 36, 48), PackedInt32Array(5, 49, 4), PackedInt32Array(4, 49, 50), PackedInt32Array(52, 48, 51), PackedInt32Array(47, 48, 29), PackedInt32Array(29, 48, 52), PackedInt32Array(52, 51, 49), PackedInt32Array(49, 51, 50), PackedInt32Array(50, 51, 53)]
+
+[node name="PathfindingTest" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nnsah")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 10, 10, 10)
+
+[node name="Agent" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_ik1ee")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Agent"]
+shape = SubResource("CapsuleShape3D_nnsah")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Agent"]
+mesh = SubResource("CapsuleMesh_ccyl2")
+
+[node name="PathfindingComponent3D" parent="Agent" node_paths=PackedStringArray("agent", "region") instance=ExtResource("2_qsxnq")]
+agent = NodePath("..")
+region = NodePath("../../NavigationRegion3D")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_2c6q1")
+
+[node name="Map" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="Floor" type="CSGBox3D" parent="NavigationRegion3D/Map"]
+size = Vector3(25, 0.1, 25)
+
+[node name="Cylinder" type="CSGCylinder3D" parent="NavigationRegion3D/Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3)
+
+[node name="Cylinder2" type="CSGCylinder3D" parent="NavigationRegion3D/Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44943, -0.119307, -0.693171)
+radius = 0.7
+height = 2.93066
+
+[node name="Cylinder3" type="CSGCylinder3D" parent="NavigationRegion3D/Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11642, -0.119307, 2.51132)
+radius = 0.7
+height = 2.93066
+
+[node name="Wall" type="CSGBox3D" parent="NavigationRegion3D/Map"]
+transform = Transform3D(0.95631, 0, -0.292355, 0, 1, 0, 0.292355, 0, 0.95631, 4.5505, 0, -3.55624)
+size = Vector3(10, 4, 1)
+
+[node name="Wall2" type="CSGBox3D" parent="NavigationRegion3D/Map"]
+transform = Transform3D(0.908902, 0, 0.417011, 0, 1, 0, -0.417011, 0, 0.908902, -5.44055, 0, 1.20175)
+size = Vector3(10, 4, 0.5)
+
+[node name="Wall3" type="CSGBox3D" parent="NavigationRegion3D/Map"]
+transform = Transform3D(0.741812, 0, -0.670608, 0, 1, 0, 0.670608, 0, 0.741812, 0.427248, 1.96802, 7.87732)
+size = Vector3(10, 4, 0.5)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, 0.5, 0.5, 0, 0.707107, -0.707107, -0.707107, 0.5, 0.5, 0, 0, 0)
